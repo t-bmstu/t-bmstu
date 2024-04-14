@@ -1,6 +1,7 @@
 services:
   web:
     build: .
+    container_name: web
     environment:
       - APP_PORT=${APP_PORT}
       - DB_USER=${DB_USER}
@@ -10,6 +11,7 @@ services:
       - DB_HOST=${DB_HOST}
   db:
     image: postgres:latest
+    container_name: db
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_USER: ${DB_USER}
