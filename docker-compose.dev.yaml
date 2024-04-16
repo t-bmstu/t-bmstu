@@ -1,6 +1,8 @@
 services:
   web:
     build: .
+    ports:
+      - "5332:8080"
     depends_on:
       db:
         condition: service_healthy
